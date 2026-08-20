@@ -29,10 +29,18 @@ def parse_mat(a: np.ndarray, b: np.ndarray, mat_type: str) -> np.ndarray:
             [j, A, B],
             [-j, B.T, -A.T]])
 
-    return np.block([
+    if mat_type == "2":
+        return np.block([
         [A, B, -j],
         [B, A.T, j],
         [j.T, -j.T, 1]])
+
+    if mat_type == "3":
+        return np.block([
+            [A, B, -j],
+            [B.T, -A.T, j],
+            [-j.T, -j.T, -1]])
+    return None
 
 def parse_row(a: str) -> np.ndarray:
     return np.asarray([*map(lambda x:+1 if x=="+" else -1, a)])
@@ -51,8 +59,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     df = pd.read_csv(args.input)
-    print(f"{'n':>5} {'d':>80} {'d > d_prev':>12} {'det == det_csv':>14} {'det_prev == det_prev_csv':>24}")
-    print("-" * 139)
+    print(f"{'n':>5} {'d':>90} {'d > d_prev':>12} {'det == det_csv':>14} {'det_prev == det_prev_csv':>24}")
+    print("-" * 149)
 
     for row in df.itertuples():
         d_ref = 0
@@ -69,7 +77,7 @@ if __name__ == "__main__":
         d_prev = abs(sp.Matrix(mat_prev).det_bareis()) / 2**(int(row.n)-1)
         print(
             f"{row.n:>5d} "
-            f"{int(d):>80d} "
+            f"{int(d):>90d} "
             f"{color_fn(d > d_prev, 8)} "
             f"{color_fn(d == row.D, 14)} "
             f"{color_fn(d_prev == row.D_prev, 24)}")
