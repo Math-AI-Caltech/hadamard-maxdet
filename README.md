@@ -1,5 +1,5 @@
 # Record Maximal-Determinant ±1 Matrices
-This repository contains constructions of the matrices described in the paper [arXiv:????.?????](). The circulant blocks are encoded by their first rows and assembled into full matrices using the `parse_mat(...)` function in [verify.py](verify.py).
+This repository contains constructions of the matrices described in the paper [zenodo/records/22024187](https://zenodo.org/records/22024187). The circulant blocks are encoded by their first rows and assembled into full matrices using the `parse_mat(...)` function in [verify.py](verify.py).
 
 ## Usage
 ```bash
@@ -18,7 +18,7 @@ Each row describes a matrix of order $n = 3~\mathrm{mod}~4$. The strings `a` and
 | --- | --- |
 | `n` | Dimension |
 | `a` and `b` | First rows of the circulant blocks |
-| `D` | Current normalized determinant |
+| `D` | Normalized determinant |
 | `Type` | Type of the parametrization |
 | `*_prev` | Previous benchmark |
 
