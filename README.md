@@ -1,4 +1,4 @@
-# Record Maximal-Determinant ±1 Matrices
+# Record Maximal-Determinant ±1 Matrices (dimensions 51, 107, 111, 115)
 This repository contains constructions of the matrices described in the paper [zenodo/records/22024187](https://zenodo.org/records/22024187). The circulant blocks are encoded by their first rows and assembled into full matrices using the `parse_mat(...)` function in [verify.py](verify.py).
 
 ## Usage
@@ -27,4 +27,5 @@ Each row describes a matrix of order $n = 3~\mathrm{mod}~4$. The strings `a` and
 | ---: | ---: |:---:|:---:|:---:|
 | 51 | 17776121037665193653653203125 | True | True | True |
 | 107 | 25405109779472820154713362533412847329846084693257600588972842045966418068198 | True | True | True |
+| 111 | 139781659519566648611004967987048891981864344843163654605529677292458895404455125 | True | True | True |
 | 115 | 824875559997507123862490321617482346789417543713732896000289208985971332478680569108 | True | True | True |
